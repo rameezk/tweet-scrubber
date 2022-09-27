@@ -1,0 +1,9 @@
+version: "3"
+services:
+    tweet-scrubber:
+        image: rameezk/tweet-scrubber
+        restart: always
+        volumes:
+            - .data:/app/.data
+        env_file:
+            - .env
