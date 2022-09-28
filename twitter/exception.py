@@ -1,0 +1,6 @@
+class TwitterAPIException(Exception):
+    ...
+
+
+class TwitterRateLimitException(Exception):
+    ...
