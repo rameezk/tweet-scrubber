@@ -20,7 +20,8 @@ tweets. A rolling copy of the refresh token is kept.
     - Under OAuth 2.0 Authentication make it a _Native App_.
     - Under App info, make the callback URL `http://127.0.0.1:8000/oauth/callback`
 5. Click save, and copy the `CLIENT_ID` and `CLIENT_SECRET` over to the `.env` file.
-6. In your terminal, boot the server via `make start-server`
+6. In your terminal, boot the server via `make start-server`. Install all deps
+   specified in `requirements-server.txt` before doing so.
 7. In your browser, navigate to http://127.0.0.1:8000 and authorize the application
 8. A refresh token will be saved to a file `.data/.refresh_token`
 9. Complete the other missing fields such as `TWITTER_HANDLE` and `DAYS_TO_KEEP`
