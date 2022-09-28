@@ -4,6 +4,6 @@ services:
         image: rameezk/tweet-scrubber
         restart: always
         volumes:
-            - .data:/app/.data
+            - ./.data:/app/.data
         env_file:
             - .env

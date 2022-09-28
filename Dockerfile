@@ -13,6 +13,6 @@ COPY --from=venv /build/.venv .venv
 ENV PATH /app/.venv/bin:$PATH
 
 COPY twitter ./twitter
-COPY scrub.py ./
+COPY scrub.py entrypoint.sh ./
 
-CMD ["python", "scrub.py"]
+ENTRYPOINT ["./entrypoint.sh"]
