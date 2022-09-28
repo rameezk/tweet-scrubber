@@ -33,6 +33,8 @@ def scrub_tweets():
             failed_to_delete += 1
         except TwitterRateLimitException as e:
             print(e)
+            return
+
         time.sleep(1)
 
     if failed_to_delete == 0:
