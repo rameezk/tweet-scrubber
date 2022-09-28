@@ -15,4 +15,5 @@ ENV PATH /app/.venv/bin:$PATH
 COPY twitter ./twitter
 COPY scrub.py entrypoint.sh ./
 
+ENV PYTHONUNBUFFERED=1
 ENTRYPOINT ["./entrypoint.sh"]
