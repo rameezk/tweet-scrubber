@@ -53,6 +53,7 @@ if __name__ == "__main__":
         )
 
     while True:
+        api.refresh_token()
         scrub_tweets()
         print("Sleeping for 30 minutes")
         time.sleep(1800)  # 30 minutes
