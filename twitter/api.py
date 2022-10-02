@@ -73,6 +73,8 @@ class TwitterAPI:
         if response.status_code != 200:
             raise TwitterAPIException("Failed to retrieve tweets")
 
+        print(response.json())
+        
         try:
             tweets = response.json()["data"]
         except KeyError:
