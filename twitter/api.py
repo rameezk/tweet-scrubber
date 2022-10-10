@@ -94,9 +94,6 @@ class TwitterAPI:
             headers={"Authorization": f"Bearer {access_token}"},
         )
 
-        print(response.status_code)
-        print(response.json())
-
         if response.status_code == 429:
             raise TwitterRateLimitException("API Limit reached for this 15 min window")
 
