@@ -38,13 +38,12 @@ def scrub_tweets():
             failed_to_delete += 1
         except TwitterRateLimitException as e:
             print(e)
-            return
+            return  # Need to return and sleep to honour rate limit
 
         time.sleep(1)
 
-    if failed_to_delete == 0:
-        print(f"{total_tweets} tweets have been successfully deleted.")
-    else:
+    print(f"Deleted {total_tweets - failed_to_delete} of {total_tweets}")
+    if failed_to_delete > 0:
         print(f"{failed_to_delete} tweets failed to delete.")
 
 
@@ -61,4 +60,4 @@ if __name__ == "__main__":
         api.refresh_token()
         scrub_tweets()
         print("Sleeping for 30 minutes")
-        time.sleep(1800)  # 30 minutes
+        time.sleep(30 * 60)  # 30 minutes
