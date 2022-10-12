@@ -21,10 +21,15 @@ def scrub_tweets():
     print(f"Getting tweets older than {older_than}")
     tweets = api.get_tweets(older_than=older_than)
 
+    if not tweets:
+        print("No tweets to delete")
+        return
+
     total_tweets = len(tweets)
     failed_to_delete = 0
     for count, tweet in enumerate(tweets, start=1):
         print(f"Deleting tweet [{count}/{total_tweets}]")
+
         try:
             is_deleted = api.delete_tweet_by_tweet_id(tweet["id"])
             if not is_deleted:
